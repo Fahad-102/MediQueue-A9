@@ -7,9 +7,9 @@ import { SiGmail } from 'react-icons/si';
 const Footer = () => {
     return (
         <footer className="bg-slate-900 text-slate-500 px-5 py-12 mt-auto border-t-4 border-teal-600">
-            <div className="max-w-[1200px] mx-auto flex flex-wrap justify-between gap-10">
+            <div className="max-w-300 mx-auto flex flex-wrap justify-between gap-10">
                 
-                <div className="flex-[1.5] min-w-[280px]">
+                <div className="flex-[1.5] min-w-70">
                     <div className="font-bold text-2xl text-white mb-4 tracking-wide">
                         Medi<span className="text-teal-600">Q</span><span>ueue</span>
                     </div>
@@ -19,8 +19,8 @@ const Footer = () => {
                     </p>
                 </div>
 
-                <div className="flex-1 min-w-[180px]">
-                    <h4 className="text-white font-bold mb-[18px] text-base uppercase tracking-[0.5px]">
+                <div className="flex-1 min-w-45">
+                    <h4 className="text-white font-bold mb-4.5 text-base uppercase tracking-[0.5px]">
                         Explore Platform
                     </h4>
                     <ul className="list-none p-0 m-0 flex flex-col gap-3">
@@ -47,19 +47,19 @@ const Footer = () => {
                     </ul>
                 </div>
 
-                <div className="flex-1 min-w-[220px]">
-                    <h4 className="text-white font-bold mb-[18px] text-base uppercase tracking-[0.5px]">
+                <div className="flex-1 min-w-55">
+                    <h4 className="text-white font-bold mb-4.5 text-base uppercase tracking-[0.5px]">
                         Contact & Support
                     </h4>
                     <div className="flex flex-col gap-2 text-sm text-slate-300">
                         <p className="flex items-center gap-2 m-0">
-                            <FaLocationDot className="text-teal-500 min-w-[16px]" /> ORC Mall, GEC Circle, Chittagong
+                            <FaLocationDot className="text-teal-500 min-w-4" /> ORC Mall, GEC Circle, Chittagong
                         </p>
                         <p className="flex items-center gap-2 m-0">
-                            <SiGmail className="text-teal-500 min-w-[16px]" /> muhammadfahadbinjamal@gmail.com
+                            <SiGmail className="text-teal-500 min-w-4" /> muhammadfahadbinjamal@gmail.com
                         </p>
                         <p className="flex items-center gap-2 m-0">
-                            <IoMdCall className="text-teal-500 min-w-[16px]" /> +880 1830480102
+                            <IoMdCall className="text-teal-500 min-w-4" /> +880 1830480102
                         </p>
                     </div>
                     

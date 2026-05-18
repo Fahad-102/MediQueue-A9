@@ -14,7 +14,7 @@ const Navbar = () => {
                 
                 <div className="font-bold text-2xl tracking-wide">
                     <Link href="/" className="no-underline">
-                        Medi<span className="text-red-900">Q</span><span className="text-black">ueue</span>
+                        Medi<span className="text-teal-600">Q</span><span className="text-black">ueue</span>
                     </Link>
                 </div>
                 

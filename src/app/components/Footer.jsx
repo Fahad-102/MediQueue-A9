@@ -6,12 +6,12 @@ import { SiGmail } from 'react-icons/si';
 
 const Footer = () => {
     return (
-        <footer className="bg-slate-900 text-slate-400 px-5 py-12 mt-auto border-t-4 border-teal-600">
+        <footer className="bg-slate-900 text-slate-500 px-5 py-12 mt-auto border-t-4 border-teal-600">
             <div className="max-w-[1200px] mx-auto flex flex-wrap justify-between gap-10">
                 
                 <div className="flex-[1.5] min-w-[280px]">
                     <div className="font-bold text-2xl text-white mb-4 tracking-wide">
-                        Medi<span className="text-red-500">Q</span><span>ueue</span>
+                        Medi<span className="text-teal-600">Q</span><span>ueue</span>
                     </div>
                     <p className="text-sm leading-relaxed text-slate-300">
                         MediQueue is Chittagong premier tutor booking and learning queue management platform. 

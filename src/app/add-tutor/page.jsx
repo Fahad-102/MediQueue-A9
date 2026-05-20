@@ -1,5 +1,6 @@
 "use client"
 import { Button, Card } from '@heroui/react';
+import { redirect } from 'next/navigation';
 import React from 'react';
 import { MdAdd } from 'react-icons/md';
 
@@ -20,6 +21,7 @@ const AddTutorPage = () => {
     })
 
     const data = await res.json()
+    redirect("/tutors")
     console.log(data)
 
   }; 

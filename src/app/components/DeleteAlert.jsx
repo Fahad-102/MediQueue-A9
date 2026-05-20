@@ -1,13 +1,27 @@
 "use client";
 
 import {AlertDialog, Button} from "@heroui/react";
+import { redirect } from "next/navigation";
 import { FaTrash } from "react-icons/fa";
 
 export function DeleteAlert({tutor}) {
-    const {tutorName} = tutor
+    const {_id,tutorName} = tutor
+
+    const handleDelete = async () =>{
+        const res = await fetch(`http://localhost:5000/tutors/${_id}`,{
+            method:"DELETE",
+            headers:{
+                "Content-Type":"application/json"
+            }
+
+        })
+        const tutor = await res.json()
+        redirect("/tutors")
+        console.log(tutor)
+    }
   return (
     <AlertDialog>
-      <Button className="text-red-500 border-red-500 flex items-center" variant="outline"> <FaTrash/> Delete Tutor</Button>
+      <Button  className="text-red-500 border-red-500 flex items-center" variant="outline"> <FaTrash/> Delete Tutor</Button>
       <AlertDialog.Backdrop>
         <AlertDialog.Container>
           <AlertDialog.Dialog className="sm:max-w-100">
@@ -26,7 +40,7 @@ export function DeleteAlert({tutor}) {
               <Button slot="close" variant="tertiary">
                 Cancel
               </Button>
-              <Button slot="close" variant="danger">
+              <Button onClick={handleDelete} slot="close" variant="danger">
                 Delete Project
               </Button>
             </AlertDialog.Footer>

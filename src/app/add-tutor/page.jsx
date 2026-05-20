@@ -1,6 +1,7 @@
 "use client"
 import { Button, Card } from '@heroui/react';
 import React from 'react';
+import { MdAdd } from 'react-icons/md';
 
 const AddTutorPage = () => {
   const onSubmit = async(e) => {
@@ -70,7 +71,7 @@ const AddTutorPage = () => {
             </div>
 
             <div className="flex flex-col gap-2">
-              <label className="text-sm font-medium text-teal-600 dark:text-slate-300">Tuition Fee (USD / Monthly) *</label>
+              <label className="text-sm font-medium text-teal-600 dark:text-slate-300">Tuition Fee (USD / Hourly) *</label>
               <input 
                 name="price"
                 type="number"
@@ -192,7 +193,7 @@ const AddTutorPage = () => {
             type="submit"
             className="rounded-2xl w-full bg-teal-600 text-white hover:bg-teal-700 transition-colors py-6 font-semibold border-none shadow-md"
           >
-            Add Tutor Profile
+            <MdAdd />Add Tutor Profile
           </Button>
         </form>
       </Card>

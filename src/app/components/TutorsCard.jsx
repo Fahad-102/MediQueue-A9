@@ -1,6 +1,8 @@
 import { Button, Card } from '@heroui/react';
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
+import { FcExternal } from 'react-icons/fc';
 
 const TutorsCard = ({ tutor }) => {
   const {
@@ -59,19 +61,20 @@ const TutorsCard = ({ tutor }) => {
             </div>
             <div className="text-right">
               <span className="block text-[10px] uppercase text-default-400 font-bold tracking-wider">Mode</span>
-              <span className="text-sm font-semibold bg-teal-50 dark:bg-teal-950/30 text-teal-600 dark:text-teal-400 px-2.5 py-0.5 rounded-md inline-block">
+              <span className="text-sm font-bold bg-teal-50 dark:bg-teal-950/30 text-teal-600 dark:text-teal-400 px-2.5 py-0.5 rounded-md inline-block">
                 {teachingMode}
               </span>
             </div>
           </div>
         </div>
 
-        <Button 
-          className="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold transition-colors duration-200"
+       <Link href={`/tutors/${_id}`}> <Button 
+          variant='ghost' className="w-full  hover:bg-green-700 hover:text-white text-teal-600 font-bold transition-colors duration-200"
           radius="lg"
         >
-          Book Now
+          <FcExternal /> Book Now
         </Button>
+        </Link>
       </Card>
     </div>
   );

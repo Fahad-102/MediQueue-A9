@@ -18,11 +18,11 @@ const Navbar = () => {
         </Link>
         
         <div className="hidden md:flex items-center gap-6">
-          <Link href="/" className="text-gray-700 dark:text-slate-300 no-underline hover:text-teal-600 dark:hover:text-teal-400 font-medium transition-colors">Home</Link>
-          <Link href="/tutors" className="text-gray-700 dark:text-slate-300 no-underline hover:text-teal-600 dark:hover:text-teal-400 font-medium transition-colors">Tutors</Link>
-          <Link href="/add-tutor" className="text-gray-700 dark:text-slate-300 no-underline hover:text-teal-600 dark:hover:text-teal-400 font-medium transition-colors">Add Tutor</Link>
-          <Link href="/my-tutors" className="text-gray-700 dark:text-slate-300 no-underline hover:text-teal-600 dark:hover:text-teal-400 font-medium transition-colors">My Tutors</Link>
-          <Link href="/my-booked-sessions" className="text-gray-700 dark:text-slate-300 no-underline hover:text-teal-600 dark:hover:text-teal-400 font-medium transition-colors">My Booked Sessions</Link>
+          <Link href="/" className="text-teal-600  p-2 dark:text-slate-300 no-underline hover:text-green-500 hover:border-b-2  hover:rounded-xl  dark:hover:text-teal-400 font-medium transition-colors">Home</Link>
+          <Link href="/tutors" className="text-teal-600  p-2 dark:text-slate-300 no-underline hover:text-green-500 hover:border-b-2  hover:rounded-xl  dark:hover:text-teal-400 font-medium transition-colors">Tutors</Link>
+          <Link href="/add-tutor" className="text-teal-600  p-2 dark:text-slate-300 no-underline hover:text-green-500 hover:border-b-2  hover:rounded-xl  dark:hover:text-teal-400 font-medium transition-colors">Add Tutor</Link>
+          <Link href="/my-tutors" className="text-teal-600  p-2 dark:text-slate-300 no-underline hover:text-green-500 hover:border-b-2  hover:rounded-xl  dark:hover:text-teal-400 font-medium transition-colors">My Tutors</Link>
+          <Link href="/my-booked-sessions" className="text-teal-600  p-2 dark:text-slate-300 no-underline hover:text-green-500 hover:border-b-2  hover:rounded-xl  dark:hover:text-teal-400 font-medium transition-colors">My Booked Sessions</Link>
         </div>
         
         <div className="hidden md:flex items-center gap-4">
@@ -34,7 +34,7 @@ const Navbar = () => {
             {theme === "dark" ? <HiOutlineSun /> : <HiOutlineMoon />}
           </button>
           
-          <Link href="/login" className="text-gray-700 dark:text-slate-300 no-underline font-medium hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Login</Link>
+          <Link href="/login" className="text-teal-600 dark:text-slate-300 no-underline font-medium hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Login</Link>
           <Link href="/register" className="bg-teal-600 dark:bg-teal-500 text-white px-4 py-2 rounded no-underline hover:bg-teal-700 dark:hover:bg-teal-600 font-medium transition-colors shadow-sm">
             Register
           </Link>

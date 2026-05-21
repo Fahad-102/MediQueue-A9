@@ -2,6 +2,7 @@ import React from 'react';
 import { auth } from '../lib/auth';
 import { headers } from 'next/headers';
 import TutorRowActions from '../components/TutorRowActions';
+import ProtectedRoute from '../components/ProtectedRoute';
 
 
 const MyTutorsPage = async () => {
@@ -23,6 +24,7 @@ const MyTutorsPage = async () => {
     const userTutors = allTutors.filter(tutor => tutor.userId === user.id || tutor.userID === user.id);
 
     return (
+        <ProtectedRoute>
         <div className="max-w-7xl mx-auto p-5 my-10">
             <h1 className="text-3xl font-bold text-gray-800 mb-6 text-center md:text-left">
                 My Tutors List
@@ -54,6 +56,7 @@ const MyTutorsPage = async () => {
                 </div>
             )}
         </div>
+        </ProtectedRoute>
     );
 };
 

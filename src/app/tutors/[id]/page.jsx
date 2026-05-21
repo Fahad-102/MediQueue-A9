@@ -1,6 +1,7 @@
 import BookingButton from '@/app/components/BookingButton';
 import { DeleteAlert } from '@/app/components/DeleteAlert';
 import { EditModal } from '@/app/components/EditModal';
+import ProtectedRoute from '@/app/components/ProtectedRoute';
 import { Card } from '@heroui/react';
 import Image from 'next/image';
 import React from 'react';
@@ -25,6 +26,7 @@ const TutorsDetailspage = async ({ params }) => {
     
     if (!tutor) {
         return (
+            
             <div className="flex flex-col justify-center items-center h-[60vh] gap-3">
                 <div className="text-red-500 bg-red-50 px-4 py-2 rounded-full font-medium text-sm">Server Connection Failed</div>
                 <p className="text-gray-500 text-sm">Please ensure your backend server is running on port 5000.</p>
@@ -50,8 +52,9 @@ const TutorsDetailspage = async ({ params }) => {
     } = tutor;
 
     return (
-            <Card className='max-w-5xl  mx-auto bg-gray-300'>
-                <div className='flex items-center gap-2'>
+        <ProtectedRoute>
+            <Card className='max-w-5xl  mx-auto bg-gray-300 p-4'>
+                <div className='flex items-center gap-2 mb-4'>
                     <EditModal tutor={tutor} />
                 <DeleteAlert tutor={tutor} />
                 </div>
@@ -140,6 +143,7 @@ const TutorsDetailspage = async ({ params }) => {
                 </div>
             </div>
             </Card>
+            </ProtectedRoute>
     );
 };
 

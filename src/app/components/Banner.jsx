@@ -6,6 +6,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Pagination, Navigation } from 'swiper/modules';
+import Link from 'next/link';
 
 const Banner = () => {
     return (
@@ -22,19 +23,21 @@ const Banner = () => {
                             Boost your grades and master any subject with the help of our experienced, top-rated educators.
                         </p>
                         <div className="flex gap-4">
-                            <button className="px-6 py-3 bg-teal-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all duration-300 shadow-md">
+                           <Link href={"/tutors"}> <button className="px-6 py-3 bg-teal-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all duration-300 shadow-md">
                                 Find a Tutor
                             </button>
-                            <button className="px-6 py-3 bg-transparent border-2 border-white text-white hover:bg-white hover:text-black font-semibold rounded-lg transition-all duration-300">
-                                Learn More
+                            </Link>
+                            <Link href={"/register"}><button className="px-6 py-3 bg-transparent border-2 border-white text-white hover:bg-white hover:text-black font-semibold rounded-lg transition-all duration-300">
+                                Registration
                             </button>
+                            </Link>
                         </div>
                     </div>
                 </div>
             </SwiperSlide>
 
             <SwiperSlide>
-                <div className="relative w-full h-[500px] bg-cover bg-center bg-no-repeat bg-[url(https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1920)]">
+                <div className="relative w-full h-125 bg-cover bg-center bg-no-repeat bg-[url(https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1920)]">
                     <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-center px-6">
                         <h1 className="text-3xl md:text-5xl font-extrabold text-white mb-4 drop-shadow-md">
                             Start Your Teaching Career Today

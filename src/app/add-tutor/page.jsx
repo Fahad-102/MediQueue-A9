@@ -3,6 +3,7 @@ import { Button, Card } from '@heroui/react';
 import { redirect } from 'next/navigation';
 import React from 'react';
 import { MdAdd } from 'react-icons/md';
+import ProtectedRoute from '../components/ProtectedRoute';
 
 const AddTutorPage = () => {
   const onSubmit = async(e) => {
@@ -27,6 +28,7 @@ const AddTutorPage = () => {
   }; 
 
   return (
+    <ProtectedRoute>
     <div className='max-w-7xl mx-auto my-10 px-4'>
       <h1 className='text-4xl font-bold mb-6 text-gray-500 '>Add Tutors</h1>
       <Card className="shadow-lg border bg-white dark:bg-slate-900 dark:border-slate-800">
@@ -200,6 +202,7 @@ const AddTutorPage = () => {
         </form>
       </Card>
     </div>
+    </ProtectedRoute>
   );
 };
 

@@ -2,6 +2,7 @@ import React from 'react';
 import { auth } from '../lib/auth';
 import { headers } from 'next/headers';
 import { BookingDeleteAlert } from '../components/BookingDeleteAlert';
+import ProtectedRoute from '../components/ProtectedRoute';
 
 
 const Bookingpage = async () => {
@@ -21,6 +22,7 @@ const Bookingpage = async () => {
     const data = await res.json();
 
     return (
+        <ProtectedRoute>
         <div className="max-w-7xl mx-auto p-5 my-10">
             <h1 className="text-3xl font-bold text-gray-800 mb-6 text-center md:text-left">
                 My Booked Sessions
@@ -77,6 +79,7 @@ const Bookingpage = async () => {
                 </div>
             )}
         </div>
+        </ProtectedRoute>
     );
 };
 

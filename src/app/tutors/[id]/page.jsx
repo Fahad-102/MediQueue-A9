@@ -1,10 +1,10 @@
+import BookingButton from '@/app/components/BookingButton';
 import { DeleteAlert } from '@/app/components/DeleteAlert';
 import { EditModal } from '@/app/components/EditModal';
 import { Card } from '@heroui/react';
 import Image from 'next/image';
 import React from 'react';
-import { FaRegEdit } from 'react-icons/fa';
-import { RiExternalLinkFill } from 'react-icons/ri';
+
 
 const TutorsDetailspage = async ({ params }) => {
     const { id } = await params;
@@ -133,19 +133,7 @@ const TutorsDetailspage = async ({ params }) => {
                                     {totalSlot} {totalSlot === 1 ? 'slot' : 'slots'} left
                                 </span>
                             </div>
-
-                            <button 
-                                disabled={totalSlot === 0}
-                                className={`px-6 py-2.5 rounded-xl font-semibold text-sm shadow-md ${
-                                    totalSlot === 0 
-                                    ? 'bg-gray-200 text-gray-400 cursor-not-allowed shadow-none' 
-                                    : 'bg-teal-600 text-white hover:bg-gray-800 hover:shadow-lg active:scale-98'
-                                }`}
-                            >
-                                <div className='flex items-center gap-2'>
-                               <RiExternalLinkFill /> Book Session
-                                </div>
-                            </button>
+                            <BookingButton tutor={tutor} totalSlot={totalSlot}/>
                         </div>
                     </div>
 

@@ -9,6 +9,13 @@ import { RiResetLeftFill } from 'react-icons/ri';
 import { FcGoogle } from 'react-icons/fc';
 
 const LoginPage = () => {
+
+   const handleGoogleSignIn = async() =>{
+        await authClient.signIn.social({
+      provider: "google",
+    });
+    }
+
   const router = useRouter();
 
   const onSubmit = async(e)=>{
@@ -99,7 +106,7 @@ transition: Bounce,
       <div className='whitespace-nowrap '>Or</div>
       <Separator/>
     </div>
-    <div><Button className="w-full text-teal-600" variant="outline"> <FcGoogle /> Login with Google</Button></div>
+    <div><Button onClick={handleGoogleSignIn} className="w-full text-teal-600" variant="outline"> <FcGoogle /> Login with Google</Button></div>
     </Card>
         </div>
     );

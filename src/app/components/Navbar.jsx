@@ -48,12 +48,12 @@ const Navbar = () => {
           
          { user ?
          <>
-         <h2 className="text-white">Welcome , {user?.name}</h2>
+         <h2 className="text-white">Welcome</h2>
          <Avatar>
         <Avatar.Image alt={user?.name} src={user?.image} />
         <Avatar.Fallback>{user?.name.charAt(0)}</Avatar.Fallback>
       </Avatar>
-         <Button onClick={handleLogout} variant="danger" className="rounded-none" >Danger</Button>
+         <Button onClick={handleLogout} variant="danger" className="rounded-none" >Logout</Button>
          </>:
           <>
           <Link href="/login" className="text-teal-600 dark:text-slate-300 no-underline font-medium hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Login</Link>

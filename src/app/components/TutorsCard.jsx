@@ -72,7 +72,7 @@ const TutorsCard = ({ tutor }) => {
           variant='ghost' className="w-full  hover:bg-green-700 hover:text-white text-teal-600 font-bold transition-colors duration-200"
           radius="lg"
         >
-          <FcExternal /> Book Now
+          <FcExternal /> View Details
         </Button>
         </Link>
       </Card>

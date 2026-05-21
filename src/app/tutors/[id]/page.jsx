@@ -12,8 +12,11 @@ const TutorsDetailspage = async ({ params }) => {
     let tutor = null;
 
     try {
-        const res = await fetch(`http://localhost:5000/tutors/${id}`, {
-            cache: 'no-store'
+        const res = await fetch(`http://localhost:5000/tutors/${id}`,  {
+            cache: 'no-store',
+            headers:{
+                authorization :"logged in"
+            }
         });
 
         if (res.ok) {

@@ -4,8 +4,20 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { useTheme } from "next-themes";
 import { HiOutlineBars3, HiXMark, HiOutlineSun, HiOutlineMoon } from "react-icons/hi2";
+import { authClient } from '../lib/auth-client';
+import Script from 'next/script';
+import { Avatar, Button } from '@heroui/react';
 
 const Navbar = () => {
+
+  const handleLogout = async()=>{
+    await authClient.signOut();
+  }
+   const { 
+        data: session,
+    } = authClient.useSession()
+    const user = session?.user
+    console.log(user)
   const [isOpen, setIsOpen] = useState(false);
   const { theme, setTheme } = useTheme();
 
@@ -34,10 +46,22 @@ const Navbar = () => {
             {theme === "dark" ? <HiOutlineSun /> : <HiOutlineMoon />}
           </button>
           
+         { user ?
+         <>
+         <h2 className="text-white">Welcome , {user?.name}</h2>
+         <Avatar>
+        <Avatar.Image alt={user?.name} src={user?.image} />
+        <Avatar.Fallback>{user?.name.charAt(0)}</Avatar.Fallback>
+      </Avatar>
+         <Button onClick={handleLogout} variant="danger" className="rounded-none" >Danger</Button>
+         </>:
+          <>
           <Link href="/login" className="text-teal-600 dark:text-slate-300 no-underline font-medium hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Login</Link>
           <Link href="/register" className="bg-teal-600 dark:bg-teal-500 text-white px-4 py-2 rounded no-underline hover:bg-teal-700 dark:hover:bg-teal-600 font-medium transition-colors shadow-sm">
             Register
           </Link>
+         </>
+         }
         </div>
 
         <div className="flex md:hidden items-center gap-2">
@@ -73,6 +97,7 @@ const Navbar = () => {
           </Link>
         </div>
       )}
+      <Script src="https://example.com/script.js" strategy="afterInteractive" />
     </nav>
   );
 };

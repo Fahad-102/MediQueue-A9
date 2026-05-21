@@ -3,6 +3,8 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { Providers } from "./providers"; 
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const josefin = Josefin_Sans({
   subsets: ["latin"],
@@ -28,7 +30,11 @@ export default function RootLayout({ children }) {
           <main className="grow m-10">
             {children}
           </main>
-          
+          <ToastContainer 
+            position="top-right" 
+            autoClose={3000} 
+            theme="dark" // dark/light/colored icchamoto dite paro
+          />
           <Footer />
         </Providers>
       </body>

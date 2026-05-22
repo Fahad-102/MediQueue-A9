@@ -19,7 +19,7 @@ const Navbar = () => {
 
   const handleLogout = async () => {
     await authClient.signOut();
-    window.location.reload(); // important for UI refresh
+    window.location.reload(); 
   };
 
   

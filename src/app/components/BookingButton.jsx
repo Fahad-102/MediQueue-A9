@@ -1,7 +1,7 @@
 "use client"
 import React from 'react';
 import { RiExternalLinkFill } from 'react-icons/ri';
-import { authClient } from '../lib/auth-client';
+import { authClient } from '../../lib/auth-client';
 import { toast } from 'react-toastify';
 import { useRouter } from 'next/navigation';
 

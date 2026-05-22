@@ -1,5 +1,5 @@
 import React from 'react';
-import { auth } from '../lib/auth';
+import { auth } from '../../lib/auth';
 import { headers } from 'next/headers';
 import { BookingDeleteAlert } from '../components/BookingDeleteAlert';
 import ProtectedRoute from '../components/ProtectedRoute';

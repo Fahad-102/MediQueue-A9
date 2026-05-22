@@ -3,7 +3,7 @@ import { Check } from '@gravity-ui/icons';
 import { Button, Card, Description, FieldError, Form, Input, Label, Separator, TextField } from '@heroui/react';
 import { useRouter } from 'next/navigation';
 import React from 'react';
-import { authClient } from '../lib/auth-client';
+import { authClient } from '../../lib/auth-client';
 import { Bounce, toast } from 'react-toastify';
 import { FcGoogle } from 'react-icons/fc';
 

@@ -71,7 +71,7 @@ const Navbar = () => {
               </Button>
             </div>
           ) : (
-            <div className="flex gap-3">
+            <div className="flex items-center gap-3">
               <Link href="/login" className="text-teal-600 no-underline hover:text-teal-500">
                 Login
               </Link>
@@ -100,7 +100,7 @@ const Navbar = () => {
       </div>
 
       {isOpen && (
-        <div className="md:hidden px-6 py-4 flex flex-col gap-3 bg-white dark:bg-slate-900 border-t dark:border-slate-800">
+        <div className="md:hidden px-6 py-4 flex items-center flex-col gap-3 bg-white dark:bg-slate-900 border-t dark:border-slate-800">
           <Link className={linkClass("/")} href="/" onClick={() => setIsOpen(false)}>Home</Link>
           <Link className={linkClass("/tutors")} href="/tutors" onClick={() => setIsOpen(false)}>Tutors</Link>
           <Link className={linkClass("/add-tutor")} href="/add-tutor" onClick={() => setIsOpen(false)}>Add Tutor</Link>
@@ -115,8 +115,10 @@ const Navbar = () => {
             </Button>
           ) : (
             <>
+            <div className="flex items-center gap-3">
               <Link href="/login" onClick={() => setIsOpen(false)}>Login</Link>
               <Link href="/register" onClick={() => setIsOpen(false)}>Register</Link>
+            </div>
             </>
           )}
         </div>

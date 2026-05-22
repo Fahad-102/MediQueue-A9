@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import { Providers } from "./providers"; 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Breadcrumb from "./components/Breadcrumb";
 
 const josefin = Josefin_Sans({
   subsets: ["latin"],
@@ -14,6 +15,9 @@ const josefin = Josefin_Sans({
 export const metadata = {
   title: "MediQueue – Tutor Booking System",
   description: "Book your online learning sessions efficiently without scheduling conflicts.",
+   icons: {
+    icon: "/logo.webp",
+  },
 };
 
 export default function RootLayout({ children }) {
@@ -26,7 +30,7 @@ export default function RootLayout({ children }) {
       <body className="min-h-full flex flex-col  bg-white dark:bg-slate-900 text-slate-900 dark:text-white transition-colors duration-300">
         <Providers>
           <Navbar />
-          
+           <Breadcrumb />
           <main className="grow m-10">
             {children}
           </main>

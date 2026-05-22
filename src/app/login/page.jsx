@@ -4,7 +4,6 @@ import { Check } from "@gravity-ui/icons";
 import {
   Button,
   Card,
-  Description,
   FieldError,
   Form,
   Input,
@@ -80,10 +79,11 @@ const LoginPage = () => {
           </div>
         </Form>
 
-        <div className="flex items-center gap-3">
-          <Separator />
-          <div className="text-sm text-gray-500">Or</div>
-          <Separator />
+        {/* FIXED OR SECTION */}
+        <div className="flex items-center gap-3 w-full">
+          <Separator className="flex-1" />
+          <div className="text-sm text-gray-500 whitespace-nowrap">Or</div>
+          <Separator className="flex-1" />
         </div>
 
         <Button

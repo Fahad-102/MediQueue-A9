@@ -40,9 +40,7 @@ const LoginPage = () => {
     });
 
     if (error) {
-      toast.error(error.message || "Signin Error!", {
-        position: "top-right",
-        autoClose: 5000,
+      toast.error(error.message || "Login Failed!", {
         theme: "light",
         transition: Bounce,
       });
@@ -56,29 +54,16 @@ const LoginPage = () => {
     <div className="min-h-screen flex items-center justify-center px-4 py-10">
       <Card className="w-full max-w-md sm:max-w-lg p-6 sm:p-8 border flex flex-col gap-6">
         <Form onSubmit={onSubmit} className="flex flex-col gap-4 w-full">
-          <TextField
-            isRequired
-            type="email"
-            validate={(value) => {
-              if (
-                !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value)
-              ) {
-                return "Please enter a valid email address";
-              }
-              return null;
-            }}
-          >
+
+          <TextField isRequired>
             <Label>Email</Label>
             <Input name="email" placeholder="john@example.com" />
             <FieldError />
           </TextField>
 
-          <TextField isRequired minLength={8} type="password">
+          <TextField isRequired>
             <Label>Password</Label>
-            <Input name="password" placeholder="Enter your password" />
-            <Description>
-              Must be at least 8 characters with 1 uppercase and 1 number
-            </Description>
+            <Input name="password" type="password" placeholder="Password" />
             <FieldError />
           </TextField>
 
@@ -88,11 +73,7 @@ const LoginPage = () => {
               Login
             </Button>
 
-            <Button
-              className="w-full bg-gray-100"
-              type="reset"
-              variant="secondary"
-            >
+            <Button className="w-full" type="reset" variant="secondary">
               <RiResetLeftFill />
               Reset
             </Button>
@@ -101,9 +82,7 @@ const LoginPage = () => {
 
         <div className="flex items-center gap-3">
           <Separator />
-          <div className="whitespace-nowrap text-sm text-gray-500">
-            Or
-          </div>
+          <div className="text-sm text-gray-500">Or</div>
           <Separator />
         </div>
 
@@ -113,7 +92,7 @@ const LoginPage = () => {
           variant="outline"
         >
           <FcGoogle />
-          Login with Google
+          Google Sign In
         </Button>
       </Card>
     </div>

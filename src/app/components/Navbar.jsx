@@ -37,18 +37,25 @@ const Navbar = () => {
   return (
     <nav className="bg-white dark:bg-slate-900 border-b dark:border-slate-800 shadow-md sticky top-0 z-50 transition-colors">
       <div className="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
-        <Link href="/" className="font-bold text-2xl text-slate-900 dark:text-white no-underline">
+        <Link
+          href="/"
+          className="font-bold text-2xl text-slate-900 dark:text-white no-underline"
+        >
           Medi<span className="text-teal-600 dark:text-teal-400">Q</span>ueue
         </Link>
 
+        {/* DESKTOP MENU */}
         <div className="hidden md:flex items-center gap-6">
           <Link href="/" className={linkClass("/")}>Home</Link>
           <Link href="/tutors" className={linkClass("/tutors")}>Tutors</Link>
           <Link href="/add-tutor" className={linkClass("/add-tutor")}>Add Tutor</Link>
           <Link href="/my-tutors" className={linkClass("/my-tutors")}>My Tutors</Link>
-          <Link href="/my-booked-sessions" className={linkClass("/my-booked-sessions")}>Booked Sessions</Link>
+          <Link href="/my-booked-sessions" className={linkClass("/my-booked-sessions")}>
+            Booked Sessions
+          </Link>
         </div>
 
+        {/* DESKTOP RIGHT */}
         <div className="hidden md:flex items-center gap-4">
           <button
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
@@ -59,7 +66,9 @@ const Navbar = () => {
 
           {user ? (
             <div className="flex items-center gap-3">
-              <span className="text-slate-900 dark:text-white">{user.name}</span>
+              <span className="text-slate-900 dark:text-white">
+                {user.name}
+              </span>
 
               <Avatar>
                 <Avatar.Image src={user.image} />
@@ -72,16 +81,23 @@ const Navbar = () => {
             </div>
           ) : (
             <div className="flex items-center gap-3">
-              <Link href="/login" className="text-teal-600 no-underline hover:text-teal-500">
+              <Link
+                href="/login"
+                className="text-teal-600 no-underline hover:text-teal-500"
+              >
                 Login
               </Link>
-              <Link href="/register" className="bg-teal-600 text-white px-4 py-2 rounded no-underline hover:bg-teal-500">
+              <Link
+                href="/register"
+                className="bg-teal-600 text-white px-4 py-2 rounded no-underline hover:bg-teal-500"
+              >
                 Register
               </Link>
             </div>
           )}
         </div>
 
+        {/* MOBILE BUTTONS */}
         <div className="flex md:hidden items-center gap-3">
           <button
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
@@ -99,27 +115,56 @@ const Navbar = () => {
         </div>
       </div>
 
+      {/* MOBILE MENU */}
       {isOpen && (
-        <div className="md:hidden px-6 py-4 flex items-center flex-col gap-3 bg-white dark:bg-slate-900 border-t dark:border-slate-800">
-          <Link className={linkClass("/")} href="/" onClick={() => setIsOpen(false)}>Home</Link>
-          <Link className={linkClass("/tutors")} href="/tutors" onClick={() => setIsOpen(false)}>Tutors</Link>
-          <Link className={linkClass("/add-tutor")} href="/add-tutor" onClick={() => setIsOpen(false)}>Add Tutor</Link>
-          <Link className={linkClass("/my-tutors")} href="/my-tutors" onClick={() => setIsOpen(false)}>My Tutors</Link>
-          <Link className={linkClass("/my-booked-sessions")} href="/my-booked-sessions" onClick={() => setIsOpen(false)}>Booked Sessions</Link>
+        <div className="md:hidden px-6 py-4 flex flex-col gap-3 bg-white dark:bg-slate-900 border-t dark:border-slate-800">
+          <Link href="/" onClick={() => setIsOpen(false)} className={linkClass("/")}>
+            Home
+          </Link>
+          <Link href="/tutors" onClick={() => setIsOpen(false)} className={linkClass("/tutors")}>
+            Tutors
+          </Link>
+          <Link href="/add-tutor" onClick={() => setIsOpen(false)} className={linkClass("/add-tutor")}>
+            Add Tutor
+          </Link>
+          <Link href="/my-tutors" onClick={() => setIsOpen(false)} className={linkClass("/my-tutors")}>
+            My Tutors
+          </Link>
+          <Link
+            href="/my-booked-sessions"
+            onClick={() => setIsOpen(false)}
+            className={linkClass("/my-booked-sessions")}
+          >
+            Booked Sessions
+          </Link>
 
-          <hr />
+          <hr className="border-gray-300 dark:border-gray-700" />
 
           {user ? (
-            <Button onClick={handleLogout} className="bg-red-500 text-white">
+            <Button
+              onClick={handleLogout}
+              className="bg-red-500 text-white w-full"
+            >
               Logout
             </Button>
           ) : (
-            <>
-            <div className="flex items-center gap-3">
-              <Link href="/login" onClick={() => setIsOpen(false)}>Login</Link>
-              <Link href="/register" onClick={() => setIsOpen(false)}>Register</Link>
+            <div className="flex flex-col w-full gap-3 pt-2">
+              <Link
+                href="/login"
+                onClick={() => setIsOpen(false)}
+                className="w-full text-center py-2 rounded-md border border-teal-600 text-teal-600 dark:text-teal-400 hover:bg-teal-50 dark:hover:bg-slate-800"
+              >
+                Login
+              </Link>
+
+              <Link
+                href="/register"
+                onClick={() => setIsOpen(false)}
+                className="w-full text-center py-2 rounded-md bg-teal-600 text-white hover:bg-teal-500"
+              >
+                Register
+              </Link>
             </div>
-            </>
           )}
         </div>
       )}

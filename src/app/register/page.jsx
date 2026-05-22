@@ -42,8 +42,6 @@ const RegisterPage = () => {
 
     if (error) {
       toast.error(error.message || "Registration Failed!", {
-        position: "top-right",
-        autoClose: 5000,
         theme: "light",
         transition: Bounce,
       });
@@ -57,6 +55,7 @@ const RegisterPage = () => {
     <div className="min-h-screen flex items-center justify-center px-4 py-10">
       <Card className="w-full max-w-md sm:max-w-lg p-6 sm:p-8 border flex flex-col gap-6">
         <Form onSubmit={onSubmit} className="flex flex-col gap-4 w-full">
+
           <TextField isRequired>
             <Label>Name</Label>
             <Input name="name" placeholder="Enter your Name" />
@@ -70,27 +69,25 @@ const RegisterPage = () => {
           </TextField>
 
           <TextField isRequired>
-            <Label>Photo Url</Label>
-            <Input name="image" placeholder="Enter your Photo Url" />
+            <Label>Photo URL</Label>
+            <Input name="image" placeholder="Enter your Photo URL" />
             <FieldError />
           </TextField>
 
-          <TextField isRequired minLength={8}>
+          <TextField isRequired>
             <Label>Password</Label>
-            <Input name="password" placeholder="Enter your password" />
-            <Description>
-              Must be at least 8 characters with 1 uppercase and 1 number
-            </Description>
+            <Input name="password" type="password" placeholder="Password" />
+            <Description>Min 8 chars, 1 uppercase, 1 number</Description>
             <FieldError />
           </TextField>
 
           <div className="flex flex-col sm:flex-row gap-2">
-            <Button type="submit" className="w-full sm:w-auto">
+            <Button className="w-full bg-teal-600 text-white" type="submit">
               <Check />
               Submit
             </Button>
 
-            <Button type="reset" variant="secondary" className="w-full sm:w-auto">
+            <Button className="w-full" type="reset" variant="secondary">
               Reset
             </Button>
           </div>
@@ -98,9 +95,7 @@ const RegisterPage = () => {
 
         <div className="flex items-center gap-3">
           <Separator />
-          <div className="whitespace-nowrap text-sm text-gray-500">
-            Or
-          </div>
+          <div className="text-sm text-gray-500">Or</div>
           <Separator />
         </div>
 
@@ -110,7 +105,7 @@ const RegisterPage = () => {
           variant="outline"
         >
           <FcGoogle />
-          Login with Google
+          Google Sign In
         </Button>
       </Card>
     </div>

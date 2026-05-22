@@ -2,20 +2,26 @@ import BookingButton from '@/app/components/BookingButton';
 import { DeleteAlert } from '@/app/components/DeleteAlert';
 import { EditModal } from '@/app/components/EditModal';
 import ProtectedRoute from '@/app/components/ProtectedRoute';
+import { auth } from '@/lib/auth';
 import { Card } from '@heroui/react';
+import { headers } from 'next/headers';
 import Image from 'next/image';
 import React from 'react';
 
 
 const TutorsDetailspage = async ({ params }) => {
     const { id } = await params;
+    const token = await auth.api.getToken({
+        headers: await headers()
+    });
+    console.log(token)
     let tutor = null;
 
     try {
         const res = await fetch(`http://localhost:5000/tutors/${id}`,  {
             cache: 'no-store',
             headers:{
-                authorization :"logged in"
+                authorization :`Bearer ${token.token}`
             }
         });
 

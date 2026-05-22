@@ -1,36 +1,137 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# MediQueue – Tutor Booking System
 
-## Getting Started
+MediQueue is a modern Tutor Booking Web Application where students can easily find tutors, explore tutor details, and book learning sessions online based on subject, availability, and preferred teaching mode.
 
-First, run the development server:
+## 🌐 Live Website
+🔗 
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 📂 Client Repository
+🔗 
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📂 Server Repository
+🔗 
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# 🚀 Features
 
-## Learn More
+- 🔐 Secure Authentication using Better Auth, JWT & Google Login
+- 📚 Browse and search tutors by subject and tutor name
+- 🎯 Advanced filtering system for tutors
+- 📅 Book tutoring sessions with automatic slot management
+- 🧑‍🏫 Add, update, and delete tutors dynamically
+- 🌙 Dark & Light Theme support
+- 📱 Fully Responsive for Mobile, Tablet & Desktop
+- ⚡ Real-time UI updates without page reload
+- 🔒 Protected Private Routes using JWT Authentication
+- 🔔 Toast Notifications & Sweet Alerts for all CRUD operations
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# 🛠️ Technologies Used
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Frontend
+- Next.js
+- React.js
+- Tailwind CSS
+- Hero UI
+- Framer Motion
+- SweetAlert2
+- Better Auth
 
-## Deploy on Vercel
+## Backend
+- Node.js
+- Express.js
+- MongoDB
+- JWT
+- JOSE
+- CORS
+- dotenv
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# 🔑 Authentication Features
+
+- Email & Password Login/Register
+- Google Authentication
+- JWT Token Generation
+- JWT Stored on Client Side
+- Protected API Routes
+- Private Route Protection
+
+---
+
+# 📚 Main Functionalities
+
+## 🏠 Home Page
+- Hero Banner Slider
+- Featured Tutors Section
+- Extra Informative Sections
+- Call To Action Buttons
+
+## 👨‍🏫 Tutors Page
+- Search Tutors by Name
+- Filter Tutors by Subject & Price
+- Responsive Tutor Cards
+- Tutor Details Navigation
+
+## 📄 Tutor Details Page
+- Detailed Tutor Information
+- Session Booking System
+- Auto Slot Decrease
+- Session Availability Validation
+
+## ➕ Add Tutor
+Authenticated users can:
+- Create Tutor Profiles
+- Add Availability
+- Add Teaching Mode
+- Set Session Date & Fees
+
+## 📋 My Tutors
+- View Own Tutors
+- Update Tutor Information
+- Delete Tutors
+- Modal Based CRUD Operations
+
+## 📖 My Booked Sessions
+- View Personal Bookings
+- Cancel Sessions
+- Booking Status Management
+
+---
+
+# 🔎 Search & Filter
+
+### Search
+- Case-insensitive tutor search using MongoDB `$regex`
+
+### Filter
+- Filter tutors by:
+  - Subject
+  - Price Range
+  - Session Date
+
+---
+
+# 🔐 JWT Implementation
+
+JWT authentication is implemented for:
+- Private Routes
+- Secure API Calls
+- Token Verification Middleware
+- Social Login Authentication
+- Email/Password Authentication
+
+---
+
+# ⚙️ Environment Variables
+
+## Client Side
+
+```env
+NEXT_PUBLIC_API_URL=your_server_url
+BETTER_AUTH_URL=your_client_url
+BETTER_AUTH_SECRET=your_secret
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret

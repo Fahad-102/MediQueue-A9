@@ -28,7 +28,7 @@ export function EditModal({tutor}) {
     console.log(tutors);
 
 
-    const res = await fetch(`http://localhost:5000/tutors/${_id}`,{
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/tutors/${_id}`,{
       method: "PATCH",
       headers:{
         'Content-Type': 'application/json'

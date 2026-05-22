@@ -8,7 +8,7 @@ export function DeleteAlert({tutor}) {
     const {_id,tutorName} = tutor
 
     const handleDelete = async () =>{
-        const res = await fetch(`http://localhost:5000/tutors/${_id}`,{
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/tutors/${_id}`,{
             method:"DELETE",
             headers:{
                 "Content-Type":"application/json"

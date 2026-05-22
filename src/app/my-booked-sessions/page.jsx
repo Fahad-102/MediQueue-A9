@@ -20,7 +20,7 @@ const Bookingpage = async () => {
         return <div className="p-10 text-center text-red-500">Please login to see your bookings.</div>;
     }
 
-    const res = await fetch(`http://localhost:5000/booking/${user.id}`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/booking/${user.id}`, {
         cache: 'no-store',
         headers:{
                         authorization :`Bearer ${token.token}`

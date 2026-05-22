@@ -20,7 +20,7 @@ const MyTutorsPage = async () => {
         return <div className="p-10 text-center text-red-500">Please login to view your tutors list.</div>;
     }
 
-    const res = await fetch(`http://localhost:5000/tutors`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/tutors`, {
         cache: 'no-store',
          headers:{
                                 authorization :`Bearer ${token.token}`

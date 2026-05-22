@@ -9,7 +9,7 @@ const Tutorspage = async ({ searchParams }) => {
     const maxPrice = searchParams?.maxPrice || "";
 
     const res = await fetch(
-        `http://localhost:5000/tutors?search=${search}&subject=${subject}&minPrice=${minPrice}&maxPrice=${maxPrice}`,
+        `${process.env.NEXT_PUBLIC_API_URL}/tutors?search=${search}&subject=${subject}&minPrice=${minPrice}&maxPrice=${maxPrice}`,
         {
             cache: "no-store"
         }

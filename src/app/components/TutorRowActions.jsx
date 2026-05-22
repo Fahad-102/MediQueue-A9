@@ -34,7 +34,7 @@ export default function TutorRowActions({ initialTutors }) {
             tutorFee: Number(hourlyFee)
         };
 
-        const res = await fetch(`http://localhost:5000/tutors/${targetId}`, {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/tutors/${targetId}`, {
             method: "PATCH",
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(updatedInfo)
@@ -54,7 +54,7 @@ export default function TutorRowActions({ initialTutors }) {
     const handleDelete = async () => {
         const targetId = selectedTutor._id?.$oid || selectedTutor._id;
         
-        const res = await fetch(`http://localhost:5000/tutors/${targetId}`, {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/tutors/${targetId}`, {
             method: "DELETE"
         });
 

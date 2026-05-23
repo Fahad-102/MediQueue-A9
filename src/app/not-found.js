@@ -1,9 +1,10 @@
+import Image from 'next/image';
 import React from 'react';
 
 const NotfoundPage = () => {
     return (
         <div>
-           <image
+           <Image
            src="/notFound.png"
               alt="Not Found"
                 width={500}

@@ -22,12 +22,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html
-      lang="en"
-      className={`${josefin.className} h-full antialiased`}
-      suppressHydrationWarning 
-    >
-      <body className="min-h-full flex flex-col  bg-white dark:bg-slate-900 text-slate-900 dark:text-white transition-colors duration-300">
+   <html lang="en" suppressHydrationWarning>
+      <body className={`min-h-full flex flex-col bg-white dark:bg-slate-900 text-slate-900 dark:text-white transition-colors duration-300 ${josefin.className}`}>
         <Providers>
           <Navbar />
            <Breadcrumb />
@@ -37,7 +33,7 @@ export default function RootLayout({ children }) {
           <ToastContainer 
             position="top-right" 
             autoClose={3000} 
-            theme="dark" // dark/light/colored icchamoto dite paro
+            theme="dark" 
           />
           <Footer />
         </Providers>

@@ -23,11 +23,12 @@ const TutorsCard = ({ tutor }) => {
         
         <div className="relative w-full aspect-square mb-4 bg-default-100 rounded-xl overflow-hidden">
           <Image
-            src={photo}
+             src={photo?.trim() || "/ImageNotFound.jpg"}
             alt={tutorName}
             fill
-            sizes="(max-w-7xl) 33vw, (max-w-md) 100vw"
-            priority={false}
+            sizes="(max-width: 1200px) 33vw, 100vw"
+             loading="eager"
+             unoptimized
             className="rounded-xl object-cover hover:scale-105 transition-transform duration-500"
           />
           <span className="absolute top-3 left-3 bg-teal-600 text-white text-xs font-semibold px-2.5 py-1 rounded-full shadow-sm">
